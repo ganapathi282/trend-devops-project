@@ -1,0 +1,10 @@
+.git
+.gitignore
+Dockerfile
+Jenkinsfile
+terraform
+*.tfstate
+*.tfstate.*
+.terraform
+.terraform.lock.hcl
+terraform.tfvars
