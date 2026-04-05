@@ -18,7 +18,7 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t $DOCKER_IMAGE:latest .'
+                sh '/usr/bin/docker build -t $DOCKER_IMAGE:latest .'
             }
         }
 
@@ -29,14 +29,14 @@ pipeline {
                     usernameVariable: 'USER',
                     passwordVariable: 'PASS')]) {
 
-                    sh 'echo $PASS | docker login -u $USER --password-stdin'
+                    sh 'echo $PASS | /usr/bin/docker login -u $USER --password-stdin'
                 }
             }
         }
 
         stage('Push Image') {
             steps {
-                sh 'docker push $DOCKER_IMAGE:latest'
+                sh '/usr/bin/docker push $DOCKER_IMAGE:latest'
             }
         }
 
