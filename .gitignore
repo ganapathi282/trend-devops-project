@@ -7,3 +7,4 @@ terraform.tfvars
 *.key
 *.log
 node_modules/
+terraform.tfvars
